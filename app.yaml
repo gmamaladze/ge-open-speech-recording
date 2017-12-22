@@ -14,6 +14,6 @@ handlers:
 
 #[START env]
 env_variables:
-    CLOUD_STORAGE_BUCKET: open-speech-data
-    SESSION_SECRET_KEY: a427d62b1f748b7af2a965c88a99005
+    CLOUD_STORAGE_BUCKET: ge-open-speech-recording.appspot.com
+    SESSION_SECRET_KEY: xxxxxxxxxx
 #[END env]

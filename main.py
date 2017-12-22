@@ -5,6 +5,7 @@ from flask import redirect
 from flask import render_template
 from flask import request
 from flask import session
+from flask import send_from_directory
 from werkzeug.utils import secure_filename
 
 from google.cloud import storage
@@ -30,6 +31,11 @@ def welcome():
     else:
         return render_template("welcome.html")
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
 @app.route("/legal")
 def legal():
     return render_template("legal.html")
@@ -52,13 +58,17 @@ def upload():
     secure_name = secure_filename(filename)
     # Left in for debugging purposes. If you comment this back in, the data
     # will be saved to the local file system.
-    #with open(secure_name, 'wb') as f:
+    # with open(secure_name, 'wb') as f:
     #    f.write(audio_data)
     # Create a Cloud Storage client.
-    gcs = storage.Client()
-    bucket = gcs.get_bucket(CLOUD_STORAGE_BUCKET)
-    blob = bucket.blob(secure_name)
-    blob.upload_from_string(audio_data, content_type='audio/ogg')
+    try:
+        gcs = storage.Client()
+        bucket = gcs.get_bucket(CLOUD_STORAGE_BUCKET)
+        blob = bucket.blob(secure_name)
+        blob.upload_from_string(audio_data, content_type='audio/ogg')
+    except Exception, ex:
+        print(ex)
+        raise ex
     return make_response('All good')
 
 # CSRF protection, see http://flask.pocoo.org/snippets/3/.

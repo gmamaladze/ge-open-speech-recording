@@ -1,78 +1,64 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Open Speech Recording</title>	
+    <title>წაგვიკითხეთ 32 ქართული სიტყვა</title>
     <link href="static/styles/app.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
+</head>
+<body>
 
-    <div class="wrapper">
+<div class="wrapper">
 
-      <header>
-        <h1>Open Speech Recording</h1>
-      </header>
+    <header>
+        <h1>გთხოვთ დაგვეხმაროთ სასწავლო მიზნით რამოდენიმე ათეული ქართული სიტყვის აუდიო ფაილების ღია ბაზის შექმნაში</h1>
+    </header>
 
-      <section class="top-display">
-	<div class="welcome-display">
-          There are very few open source collections of speech data where individual
-	  words are spoken by a large number of different people. This makes it tough to
-	  build good open source examples of detecting spoken keywords such as 
-	  &quot;Yes&quot;, &quot;No&quot;, &quot;On&quot;, or &quot;Off&quot;.
-	</div>
-	<div class="welcome-display">
-	  To fill this gap, the <a href="https://aiyprojects.withgoogle.com/">AIY team</a>
-	  is hoping to gather single spoken words from several hundred people and then release
-	  the resulting data set under an open license, together with an example of how to use
-	  it to create simple speech command classifiers.
-	</div>
-	<div class="welcome-display">
-To make sure that we're able to share your data as part of a public data set with no privacy or other concerns, we need to get your agreement formally. If you would like to participate in providing some samples, please review and confirm your agreement to the following:
-	</div>
-	<div class="legal"> 
-Participant Agreement
-Google Inc., located at 1600 Amphitheatre Parkway, Mountain View, California 94043, for itself and its subsidiaries and affiliates (“Google”), and the other party identified below (“You”) agree as follows:
-	</div>
-	<div class="legal">
-1.	By participating, this website will ask for permission to use your microphone and prompt you to speak single words which we will record (the “Study”). These words will appear on-screen, one after another, over the course of around five minutes, with short pauses in between. When the microphone is active, you’ll see an oscilloscope display showing a waveform reflecting the audio received. The Record button will turn red when a word is being recorded (each a “clip”). Clips will be displayed in the bottom half of the web page where you can review and delete any of them locally before submitting them to Google. Clips will only be sent to Google when you press the ‘Upload’ button, or the ‘OK’ button on the dialog that appears once you’ve completed all the requested words. At any point you can press the ‘Stop’ button to pause the recording process. Navigating away from this website will remove all local copies of the clips.
-	</div>
-	<div class="legal">
-2.	Your participation is voluntary and you may choose to cease participation at any time. You will not be compensated for your participation. <b>If you choose to participate in this Study, you must be in a quiet room with no other voices and only speak the requested words. A closed room is a good place for this</b>. 
-	</div>
-	<div class="legal">
-3.	By participating, you agree that Google may use the clips to develop and improve its products, and share the clips with others, including the general public, for example, as part of a public dataset to facilitate research. You understand that your voice alone or in combination with other information could identify you. You specifically waive and release any potential intellectual property right, right of publicity, or right of privacy claim against Google or others for use or sharing of your clips.	
-	</div>
-	<div class="legal">
-4.	GOOGLE MAKES NO WARRANTY, EXPRESS OR IMPLIED, WITH RESPECT TO THE STUDY AND EXPRESSLY DISCLAIMS ANY WARRANTIES, EXPRESS OR IMPLIED. IN NO EVENT WILL EITHER PARTY BE LIABLE FOR ANY DAMAGES UNDER THIS RELEASE IN EXCESS OF $100. 
-	</div>
-	<div class="legal">
-5.	This agreement does not create any agency or partnership relationship. This agreement is not assignable or transferable by you. This agreement is the parties’ entire agreement on this topic, superseding any prior or contemporaneous agreements. Any amendments must be in writing. Failure to enforce any of provisions of this agreement will not constitute a waiver. This agreement is governed by the laws of the State of California, excluding its conflict-of-laws principles. The exclusive venue for any dispute relating to this agreement will be Santa Clara County, California.
-	</div>
-	<div class="legal">
-By clicking ‘I Agree’ you confirm that you are at least eighteen years of age, you understand the points above, and consent to the collection, use, and sharing of the Clips and to Google’s <a href="https://www.google.com/intl/en/policies/terms/?fg=1">Terms of Service</a> and <a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>.
-	</div>
-      </section>
-
-      <section class="main-controls">
-        <div id="buttons">
-          <a href="/start" class="continue-link">
-	    <button class="continue">I Agree</button>
-	  </a>
+    <section class="top-display">
+        <div class="welcome-display">
+            <h3>შესავალი</h3>
+            ყველა ქართული ენის მცოდნეს გულწრფელად გაუხარდა კომპანია google-ის მიერ ქართული ენის ამომცნობის შექმნა.
+            google-ის ამ სერვისს ორი შეზღუდვა ახლავს: 1)ამოცნობის სერვისი არა google-ის აპლიკაციებიდან ფასიანია
+            2)თვითონ ამომცნობი ნეირონული ქსელი და მისი საწყისი მონაცემები მიუწვდომელია.
+            დიდ ენებს ისტორიულად დაგროვილი უზარმაზარი კლასიფიცირებული აუდიო ფაილების მონაცემთა ბაზები გააჩნიათ.
+            ასეთი ე.წ. <a href="https://en.wikipedia.org/wiki/Speech_corpus">Speech Corpus</a>-ის შექმნა დიდი და რთული
+            საქმეა.
+            ჩვენ გაცილებით უფრო მცირე და რეალისტური გეგმები გვაქვს.
+            <br>
+            <br>
+            <h3>ჩვენი მიზანი</h3>
+            ჩვენი მიზანია შევაგროვოთ 32 სიტყვის რაც შეიძლება მეტი სხვადასხვა აუდიო ჩანაწერი. მნიშვნელოვანია რომ
+            სიტყვები განსხვავებული ადამიანების
+            მიერ იქნას წარმოთქმული. ეს აუდიო ჩანაწერები გამოყენებული იქნება სასწავლო მიზნებით. კერძოდ ნეირონული ქსელის
+            გასაწრვთნელად შემდგომში ამ სიტყვების
+            ამოცნობის მიზნით.
+            <br>
+            <br>
+            <h3>უფლებები</h3>
+            თქვენი და კიდევ მინიმუმ რამოდენიმე ათეული ათასი ჩანაწერი, ყოველგვარი საიდენტიფიკაციო ინფორმაციის გარეშე,
+            შემთხვევითი თანამიმდევრობით
+            საჯაროდ გამოქვეყნდება სასწავლო, არაკომერციული თუ კომერციული გამოყენების მიზნით. ჩანაწერის შექმნით და
+            ატვირთვით თქვენ ავტომატურად
+            უარს აცხადებთ ყოველგვარ საავტორო უფლებაზე.
         </div>
-      </section>
+    </section>
 
-    </div>
+    <section class="main-controls">
+        <div id="buttons">
+            <a href="/start" class="continue-link">
+                <button class="continue">ვეთანხმები</button>
+            </a>
+        </div>
+    </section>
 
-    <a href="https://github.com/petewarden/open-speech-recording">
-      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
-    </a>
+</div>
 
-    <footer>
-      <a href="https://www.google.com/intl/en/policies/privacy/">Privacy</a>
-      <a href="https://www.google.com/intl/en/policies/terms/">Terms</a>
-      <a href="/legal">Participant Agreement</a>
-    </footer>
+<a href="https://github.com/gmamaladze/ge-open-speech-recording">
+    <img style="position: absolute; top: 0; right: 0; border: 0;"
+         src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+         alt="Fork me on GitHub"
+         data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+</a>
 
-  </body>
+</body>
 </html>

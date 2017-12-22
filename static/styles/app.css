@@ -38,9 +38,16 @@ h1, h2 {
 
 .directions {
   font-size: 1.0rem;
+  text-align: left;
 }
 
 .welcome-display {
+  font-size: 1rem;
+  text-align: left;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.thanks-display {
   font-size: 1rem;
   text-align: center;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
@@ -50,7 +57,7 @@ h1, h2 {
   font-size: 1.0rem;
   text-align: left;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
 }
 
 canvas {
@@ -203,7 +210,7 @@ input[type=checkbox]:checked ~ aside {
 }
 
 footer {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     color: #222;
     background-color: rgb(242, 242, 242);
     width: 100%;
@@ -218,4 +225,11 @@ footer a {
 
 .info-display {
   border-style: solid;
+  padding: 10px;
+  height: 60px;
+}
+
+.progress-display {
+  padding: 10px;
+  height: 60px;
 }
