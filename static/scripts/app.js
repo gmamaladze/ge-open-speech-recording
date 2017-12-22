@@ -222,8 +222,8 @@ function getRecordedWords() {
     var wordElements = document.querySelectorAll('.clip-label');
     var wordCounts = {};
     wordElements.forEach(function (wordElement) {
-        var word = wordElement.innerText;
-        if (!wordCounts.hasOwnProperty(word)) {
+        var word = wordElement.innerHTML;
+        if (!wordCounts[word]) {
             wordCounts[word] = 0;
         }
         wordCounts[word] += 1;
@@ -358,7 +358,7 @@ function uploadNextClip() {
     var clip = allClips[clipIndex];
     clip.style.display = 'None';
     var audioBlobUrl = clip.querySelector('audio').src;
-    var word = clip.querySelector('p').innerText;
+    var word = clip.querySelector('p').innerHTML;
     var xhr = new XMLHttpRequest();
     xhr.open('GET', audioBlobUrl, true);
     xhr.responseType = 'blob';
