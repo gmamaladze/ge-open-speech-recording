@@ -150,6 +150,28 @@ button.delete {
   font-size: 0.8rem;
 }
 
+button.vote-no {
+  background: #f00;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+button.vote-yes {
+  background: green;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+button.vote-no:hover:enabled, button.vote-no:focus:enabled {
+  box-shadow: none;
+  background: #f00;
+}
+
+button.vote-yes:hover:enabled, button.vote-yes:focus:enabled {
+  box-shadow: none;
+  background: green;
+}
+
 /* Checkbox hack to control information box display */
 
 label {
@@ -232,4 +254,15 @@ footer a {
 .progress-display {
   padding: 10px;
   height: 60px;
+}
+
+.vote-display {
+  border-style: solid;
+  padding: 10px;
+  text-align: center;
+}
+
+.label-display {
+  font-size: 2rem;
+  text-align: center;
 }

@@ -7,13 +7,29 @@ handlers:
 - url: /static
   static_dir: static
   secure: always
+- url: /review
+  script: review.app
+  secure: always
+- url: /get_to_vote
+  script: review.app
+  secure: always
+- url: /vote
+  script: review.app
+  secure: always
+- url: /review_thanks
+  script: review.app
+  secure: always
 - url: /.*
   script: main.app
   secure: always
 # [END handlers]
 
+libraries:
+- name: ssl
+  version: latest
+
 #[START env]
 env_variables:
     CLOUD_STORAGE_BUCKET: ge-open-speech-recording.appspot.com
-    SESSION_SECRET_KEY: xxxxxxxxxx
+    SESSION_SECRET_KEY: xxxxxx
 #[END env]

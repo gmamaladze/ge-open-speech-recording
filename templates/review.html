@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>გადაამოწმეთ 32 ქართული სიტყვა</title>
+    <link href="static/styles/app.css" rel="stylesheet" type="text/css">
+</head>
+<script type="text/javascript">
+    var csrf_token = "{{ csrf_token() }}";
+</script>
+<body>
+
+<div class="wrapper">
+
+    <header>
+        <h1>გადაამოწმეთ 32 ქართული სიტყვა</h1>
+    </header>
+
+    <section class="top-display">
+        <div class="directions">
+            თქვენი დახმარებით შეგროვდა <b>~2500</b> სიტყვის ჩანაწერი. აქედან <b style="color: green">~1500</b> აუდიო ჩანაწერის სასურველ სიტყვასთან შესაბამისობა
+            Google Speech-ის საშუალებით ავტომატურად გადამოწმდა. ამიტომ გთხოვთ დანარჩენი <b style="color: red">~1000</b> აუდიო ჩანაწერის გადამოწმებაში დაგვეხმაროთ.
+            <br/>
+            <br/>
+            <ol>
+                <li>
+                    მოისმინეთ აუდიო ჩანაწერი
+                </li>
+                <li>
+                    გამოიყენეთ ღილაკი ▶ ︎საჭიროებისამებრ ხელახლა მოსასმენად
+                </li>
+                <li>
+                    დააწექით ღილაკს [✔︎ კარგია] თუ ნაჩვენები სიტყვა ამოიცანით
+                </li>
+                <li>
+                    თუ სიტყვა არასრულად ისმის, ძლიერ დამახინჯებულია ან არ შეესაბამება ტექსტს - დააწექით ღილაკს [✘︎ არ ვარგა]
+                </li>
+                <li>
+                    შემდეგი აუდიო ჩანაწერი ავტომატურად ჩაიტვირთება
+                </li>
+            </ol>
+        </div>
+        <br/>
+        <br/>
+        <div class="progress-display">
+        </div>
+    </section>
+
+
+    <section class="vote-display">
+        <div class="label-display">
+        </div>
+        <audio controls>
+            <source src='' type='audio/ogg'>
+            <p>თქვენ ბრაუზერს სამწუხაროდ არ შეუძლია HTML5 აუდიოს დაკვრა.</p>
+        </audio>
+        <button class="vote-yes">✔︎ კარგია</button>
+        <button class="vote-no">✘︎ არ ვარგა</button>
+    </section>
+
+</div>
+
+<a href="https://github.com/gmamaladze/ge-open-speech-recording">
+    <img style="position: absolute; top: 0; right: 0; border: 0;"
+         src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+         alt="Fork me on GitHub"
+         data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+</a>
+
+<script src="static/scripts/review.js"></script>
+
+</body>
+</html>
